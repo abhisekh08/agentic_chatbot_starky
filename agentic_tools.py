@@ -94,9 +94,10 @@ def search_query_from_web(query: str) -> str:
         resp = client.search(query,search_depth="advanced",include_answer = True,include_images=False, max_results=3)
         for src_content_ind in resp["results"]:
             src_url = src_content_ind["url"]
-            if 'wikipedia' in src_url: # skipping wiki content to avoid token limit in process
-                continue
             src_content = extract_text_from_website(src_url)
+
+            if len(src_content) > 50000: # if the content is huge, ignore to keep within the token limit
+                continue
 
             output_body = output_body + f"""
             CONTENT: {src_content}
