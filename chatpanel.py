@@ -7,7 +7,30 @@ from chatbot_node import model_call
 # Page config
 st.set_page_config(page_title="Chatbot", page_icon="💬")
 
-st.title("Starky - Friendly,Agentic and just Fantastic !!!")
+st.markdown(
+    """
+    <style>
+    .title {
+        font-size: 30px;
+        font-weight: 800;
+        text-align: center;
+        background: linear-gradient(90deg, #ff6f61, #ffcc00, #33ccff, #9966ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Display the title as static component
+st.markdown(
+    '<div class="title">Starky - Friendly, Agentic and just Fantastic !!!</div>',
+    unsafe_allow_html=True
+)
 
 
 # Initialize chat history in Streamlit session state
