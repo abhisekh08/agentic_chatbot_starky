@@ -91,7 +91,7 @@ def search_query_from_web(query: str) -> str:
     try:
         client = TavilyClient(api_key=tavily_api_key)
         output_body = ""
-        resp = client.search(query,search_depth="advanced",include_answer = True,include_images=False, max_results=2)
+        resp = client.search(query,search_depth="advanced",include_answer = True,include_images=False, max_results=3)
         for src_content_ind in resp["results"]:
             src_url = src_content_ind["url"]
             if 'wikipedia' in src_url: # skipping wiki content to avoid token limit in process
