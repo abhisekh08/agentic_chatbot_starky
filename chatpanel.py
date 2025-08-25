@@ -7,7 +7,7 @@ from chatbot_node import model_call
 # Page config
 st.set_page_config(page_title="Chatbot", page_icon="💬")
 
-st.title("Starky - Your Friendly Agentic and Fantastic Chatbot")
+st.title("Starky - Friendly,Agentic and just Fantastic !!!")
 
 
 # Initialize chat history in Streamlit session state
