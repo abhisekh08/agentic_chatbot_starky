@@ -30,7 +30,7 @@ GROQ_API_KEY = credentials["GROQ_API_KEY"]
 APP_NAME = credentials["APP_NAME"]
 
 # create llm
-llm_base = ChatGroq(model_name=credentials["MODEL_NAME"],temperature=0.3,groq_api_key=GROQ_API_KEY)
+llm_base = ChatGroq(model_name=credentials["MODEL_NAME"],temperature=0.3,groq_api_key=GROQ_API_KEY,reasoning_format="parsed")
 
 # create tool
 tools = [search_query_from_web, get_stock_info]

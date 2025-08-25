@@ -17,7 +17,7 @@ APP_NAME = credentials["APP_NAME"]
 tavily_api_key = credentials["TAVILY_API_KEY"]
 
 # create llm
-llm_base = ChatGroq(model_name=credentials["MODEL_NAME"],temperature=0.1,groq_api_key=GROQ_API_KEY)
+llm_base = ChatGroq(model_name=credentials["MODEL_NAME"],temperature=0.1,groq_api_key=GROQ_API_KEY,reasoning_format="parsed")
 
 def summarize_chunk(input_text):
     msgs = [SystemMessage(f"""summarize the INPUT text to the most accurate and meaningful form under 5 sentences.stick point to point.
