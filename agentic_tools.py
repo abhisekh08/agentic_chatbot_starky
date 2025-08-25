@@ -1,8 +1,6 @@
 from dotenv import load_dotenv
 from langchain.tools import tool
 import yfinance as yf
-from ddgs import DDGS
-import os
 from langchain_groq import ChatGroq
 import requests
 from bs4 import BeautifulSoup
