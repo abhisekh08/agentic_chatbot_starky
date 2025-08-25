@@ -31,5 +31,8 @@ Currently, it is in the **Proof of Concept (POC)** stage and will continue to ev
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/starky.git
+   git clone https://github.com/abhisekh08/agentic_chatbot_starky.git
    cd starky
+
+## ✨ Demo:  
+https://starkybot.streamlit.app/
