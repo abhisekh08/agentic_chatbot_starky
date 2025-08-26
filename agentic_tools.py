@@ -95,15 +95,19 @@ def search_query_from_web(query: str) -> str:
         for src_content_ind in resp["results"]:
             src_url = src_content_ind["url"]
             src_content = extract_text_from_website(src_url)
+            src_headline = src_content_ind['content']
 
-            if len(src_content) > 50000: # if the content is huge, ignore to keep within the token limit
-                continue
-
-            output_body = output_body + f"""
-            CONTENT: {src_content}
-            SOURCE: {src_url} 
-            
-            \n\n
+            if len(src_content) > 40000: # if the content is huge, ignore to keep within the token limit
+                output_body = output_body + f"""
+                            CONTENT: {src_headline}... for more details visit the url."
+                            SOURCE: {src_url} 
+                            \n\n
+            """
+            else:
+                output_body = output_body + f"""
+                CONTENT: {src_content}
+                SOURCE: {src_url} 
+                \n\n
             """
 
         # summarized output content
