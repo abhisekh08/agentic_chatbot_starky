@@ -76,10 +76,11 @@ graph = graph_builder.compile(checkpointer=memory)
 
 
 # model module
-def model_call(messages):
-    responses = graph.invoke({"messages": messages},
-                             config={"configurable":{"thread_id": 1234}})
-    return responses["messages"][-1].content
+def model_call(messages,user_seed):
+    responses = graph.invoke({"messages": messages}, config={"configurable":{"thread_id": user_seed}})
+    resp_content =responses["messages"][-1].content
+    print(resp_content)
+    return resp_content
 
 
 

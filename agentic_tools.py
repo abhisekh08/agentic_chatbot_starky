@@ -111,7 +111,9 @@ def search_query_from_web(query: str) -> str:
             """
 
         # summarized output content
-        return summarize_large_text(output_body)
+        output_summary=summarize_large_text(output_body)
+        print(output_summary)
+        return output_summary
 
     except Exception as e:
         return f"Error caused in fetching data due to : {e}"

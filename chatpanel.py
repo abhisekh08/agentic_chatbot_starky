@@ -1,6 +1,9 @@
 import streamlit as st
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from chatbot_node import model_call
+import random
+
+user_seed = random.randint(1, 10000)
 
 
 
@@ -52,7 +55,7 @@ user_input = st.chat_input("Ask anything and everything")
 
 if user_input:
     st.session_state.messages.append(HumanMessage(user_input))
-    bot_response = model_call(st.session_state.messages)
+    bot_response = model_call(st.session_state.messages,user_seed)
     st.session_state.messages.append(AIMessage(bot_response))
 
 # Display chat history
